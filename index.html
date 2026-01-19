@@ -1,54 +1,80 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>住宿名稱 | 官方形象網站</title>
+    <title>Mama Alice | Kilimanjaro Home Stay</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital@0;1&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav>
-        <div class="logo">STAY [NAME]</div>
-        <ul>
-            <li><a href="#about">關於</a></li>
-            <li><a href="#gallery">空間</a></li>
-            <li><a href="#booking">預訂</a></li>
-        </ul>
+        <div class="logo">MAMA ALICE</div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li class="lang-switch">
+                    <button onclick="changeLang('en')">EN</button> | 
+                    <button onclick="changeLang('sw')">SW</button>
+                </li>
+            </ul>
+        </div>
     </nav>
 
     <header class="hero">
-        <div class="hero-content">
-            <h1>在 [城市名]，遇見理想的家</h1>
-            <p>A Curated Home Away From Home in [City]</p>
-            <a href="#booking" class="btn">立即查看空房</a>
+        <div class="hero-overlay">
+            <h1 id="hero-title">Welcome Home to Mama Alice</h1>
+            <p id="hero-sub">Experience true Tanzanian hospitality in the Kilimanjaro Region.</p>
+            <a href="您的Airbnb連結" class="btn">View on Airbnb</a>
         </div>
     </header>
 
     <section id="about" class="container">
-        <h2>關於空間 / The Space</h2>
-        <p class="description">
-            這裡是我們精心打造的避風港。採光明亮的客廳、溫潤的木質色調，讓疲憊的旅人在踏入的那一刻，便能卸下繁瑣。
-            <br><em>Sun-drenched living spaces and warm wooden tones designed for your restful retreat.</em>
-        </p>
+        <h2 id="about-title">Meet Your Host</h2>
+        <div class="host-profile">
+            <p id="about-text">
+                Mama Alice is a retired primary school teacher and a passionate Swahili tutor. 
+                With over 9 years of hosting experience, she welcomes you to join her family 
+                and enjoy traditional Tanzanian flavors from her kitchen.
+            </p>
+        </div>
     </section>
 
-    <section id="gallery" class="grid-container">
-        <div class="photo-card" style="background-image: url('https://images.unsplash.com/photo-1522771739844-649f6d175d97?auto=format&fit=crop&w=800&q=80');"></div>
-        <div class="photo-card" style="background-image: url('https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80');"></div>
-        <div class="photo-card" style="background-image: url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80');"></div>
-    </section>
-
-    <section id="booking" class="booking-section">
-        <h2>開始您的旅程 / Book Your Stay</h2>
-        <p>我們目前透過 Airbnb 平台提供安全的預訂服務</p>
-        <a href="https://airbnb.com/your-listing" class="btn-primary" target="_blank">前往 Airbnb 預訂</a>
+    <section class="testimonial">
+        <div class="container">
+            <p>"A fantastic cook and a heart of gold. The garden is a highlight!"</p>
+            <span>- Guest Review</span>
+        </div>
     </section>
 
     <footer>
-        <p>© 2026 [您的住宿名稱]. All Rights Reserved.</p>
+        <p>© 2026 Mama Alice Home Stay. Lives in Kilimanjaro, Tanzania.</p>
     </footer>
 
+    <script>
+        const content = {
+            'en': {
+                'hero-title': 'Welcome Home to Mama Alice',
+                'hero-sub': 'Experience true Tanzanian hospitality in the Kilimanjaro Region.',
+                'about-title': 'Meet Your Host',
+                'about-text': 'Mama Alice is a retired primary school teacher and a passionate Swahili tutor. With over 9 years of hosting experience, she welcomes you to join her family and enjoy traditional Tanzanian flavors from her kitchen.'
+            },
+            'sw': {
+                'hero-title': 'Karibu Nyumbani kwa Mama Alice',
+                'hero-sub': 'Pata ukarimu wa kweli wa Kitanzania katika Mkoa wa Kilimanjaro.',
+                'about-title': 'Kutana na Mwenyeji Wako',
+                'about-text': 'Mama Alice ni mwalimu mstaafu wa shule ya msingi na mwalimu wa Kiswahili mwenye shauku. Akiwa na uzoefu wa zaidi ya miaka 9, anakukaribisha kujiunga na familia yake na kufurahia ladha za asili za Kitanzania.'
+            }
+        };
+
+        function changeLang(lang) {
+            document.getElementById('hero-title').innerText = content[lang]['hero-title'];
+            document.getElementById('hero-sub').innerText = content[lang]['hero-sub'];
+            document.getElementById('about-title').innerText = content[lang]['about-title'];
+            document.getElementById('about-text').innerText = content[lang]['about-text'];
+        }
+    </script>
 </body>
 </html>

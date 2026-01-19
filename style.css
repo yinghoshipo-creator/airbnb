@@ -1,79 +1,63 @@
-/* 基本設定 */
-body {
-    font-family: 'Noto Sans TC', sans-serif;
-    margin: 0;
-    color: #333;
-    line-height: 1.6;
-    scroll-behavior: smooth;
+:root {
+    --primary-color: #d4a373; /* 溫潤的大地色 */
+    --text-color: #333;
+    --white: #ffffff;
 }
 
-/* 導覽列 */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    color: var(--text-color);
+}
+
 nav {
     display: flex;
     justify-content: space-between;
+    padding: 20px 8%;
     align-items: center;
-    padding: 20px 5%;
-    background: #fff;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    background: var(--white);
+    border-bottom: 1px solid #eee;
 }
 
-nav ul { display: flex; list-style: none; }
-nav ul li { margin-left: 20px; }
-nav ul li a { text-decoration: none; color: #555; font-weight: 500; }
+.logo { font-weight: bold; letter-spacing: 2px; }
+.nav-links ul { display: flex; list-style: none; }
+.nav-links li { margin-left: 20px; }
+.lang-switch button { 
+    background: none; border: none; cursor: pointer; font-weight: bold; 
+}
 
-/* 主視覺區 */
 .hero {
-    height: 80vh;
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-                url('https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1500&q=80');
-    background-size: cover;
-    background-position: center;
+    height: 70vh;
+    background: url('您的背景圖片網址') center/cover;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--white);
     text-align: center;
 }
 
-.hero h1 { font-size: 3rem; margin-bottom: 10px; }
-
-/* 按鈕設計 */
-.btn, .btn-primary {
-    display: inline-block;
-    padding: 12px 30px;
-    background: #FF5A5F; /* Airbnb 經典色 */
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
-    transition: 0.3s;
-}
-
-.btn:hover { background: #e04b50; }
-
-/* 區塊排版 */
-.container { padding: 80px 10%; text-align: center; }
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 15px;
-    padding: 0 5%;
-}
-
-.photo-card {
-    height: 300px;
-    background-size: cover;
-    background-position: center;
+.hero-overlay {
+    background: rgba(0,0,0,0.3);
+    padding: 40px;
     border-radius: 10px;
 }
 
-.booking-section {
-    background: #f7f7f7;
-    padding: 100px 10%;
-    text-align: center;
+.container { padding: 60px 15%; text-align: center; }
+
+.btn {
+    background: #FF5A5F;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
 }
 
-footer { padding: 40px; text-align: center; font-size: 0.9rem; color: #888; }
+.testimonial {
+    background: #fefae0;
+    font-style: italic;
+    padding: 40px;
+    text-align: center;
+}
