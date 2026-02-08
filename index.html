@@ -14,14 +14,23 @@
 <body>
 
     <nav>
-        <div class="logo">STAY WITH MAMA ALICE</div>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#amenities">Amenities</a></li>
-            <li><a href="#booking">Book Now</a></li>
-        </ul>
-    </nav>
+    <div class="logo">
+        MAMA <span>ALICE</span>
+    </div>
+
+    <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#amenities">Amenities</a></li>
+        <li><a href="#booking">Book Now</a></li>
+    </ul>
+</nav>
 
     <header class="hero">
         <div class="hero-content">
@@ -81,6 +90,24 @@
     <footer>
         <p>© 2026 MAMA ALICE, Moshi, Tanzania. <br>Karibu Sana!</p>
     </footer>
+
+    <script>
+    const menu = document.querySelector('#mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    menu.addEventListener('click', function() {
+        menu.classList.toggle('is-active');
+        navLinks.classList.toggle('active');
+    });
+
+    // 當點擊連結後，選單自動收合
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.remove('is-active');
+            navLinks.classList.remove('active');
+        });
+    });
+    </script>
 
 </body>
 </html>
