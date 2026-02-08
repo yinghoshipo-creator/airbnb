@@ -1,63 +1,123 @@
-:root {
-    --primary-color: #d4a373; /* 溫潤的大地色 */
-    --text-color: #333;
-    --white: #ffffff;
-}
-
+/* 基本設定 */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Noto Sans TC', sans-serif;
     margin: 0;
-    color: var(--text-color);
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
+/* 導覽列 */
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 20px 8%;
     align-items: center;
-    background: var(--white);
-    border-bottom: 1px solid #eee;
+    padding: 20px 5%;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-.logo { font-weight: bold; letter-spacing: 2px; }
-.nav-links ul { display: flex; list-style: none; }
-.nav-links li { margin-left: 20px; }
-.lang-switch button { 
-    background: none; border: none; cursor: pointer; font-weight: bold; 
-}
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 20px; }
+nav ul li a { text-decoration: none; color: #555; font-weight: 500; }
 
+/* 主視覺區 */
 .hero {
-    height: 70vh;
-    background: url('您的背景圖片網址') center/cover;
-    position: relative;
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                url('https://a0.muscache.com/im/pictures/4befe5ee-6d12-4557-a0c4-cf2069ee58ad.jpg?aki_policy=xx_large');
+    background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--white);
+    color: white;
     text-align: center;
 }
 
-.hero-overlay {
-    background: rgba(0,0,0,0.3);
-    padding: 40px;
+.hero h1 { font-size: 3rem; margin-bottom: 10px; }
+
+/* 按鈕設計 - 強化版 */
+.btn, .btn-primary, .btn-whatsapp {
+    display: inline-flex;
+    flex-direction: column; /* 讓主標題和副標題上下排列 */
+    align-items: center;
+    justify-content: center;
+    padding: 15px 25px;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    margin: 10px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    min-width: 260px;       /* 統一按鈕寬度 */
+    min-height: 70px;       /* 統一按鈕高度 */
+    box-sizing: border-box;
+    line-height: 1.2;
+}
+
+/* 副標題樣式 (小字) */
+.btn-primary small, .btn-whatsapp small {
+    font-size: 0.75rem;
+    opacity: 0.9;
+    font-weight: 300;
+    margin-top: 4px;
+}
+
+/* Airbnb 按鈕顏色 */
+.btn, .btn-primary {
+    background: #FF5A5F;
+    border: none;
+}
+
+.btn:hover, .btn-primary:hover {
+    background: #e04b50;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 90, 95, 0.3);
+}
+
+/* WhatsApp 按鈕顏色 */
+.btn-whatsapp {
+    background: #25D366;
+}
+
+.btn-whatsapp:hover {
+    background: #1eb954;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+}
+
+/* 響應式優化：手機版時按鈕全寬 */
+@media (max-width: 600px) {
+    .btn-primary, .btn-whatsapp {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+/* 區塊排版 */
+.container { padding: 80px 10%; text-align: center; }
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    padding: 0 5%;
+}
+
+.photo-card {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
     border-radius: 10px;
 }
 
-.container { padding: 60px 15%; text-align: center; }
-
-.btn {
-    background: #FF5A5F;
-    color: white;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
-    margin-top: 20px;
-}
-
-.testimonial {
-    background: #fefae0;
-    font-style: italic;
-    padding: 40px;
+.booking-section {
+    background: #f7f7f7;
+    padding: 100px 10%;
     text-align: center;
 }
+
+footer { padding: 40px; text-align: center; font-size: 0.9rem; color: #888; }
